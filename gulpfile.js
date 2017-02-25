@@ -12,16 +12,16 @@ var gulp = require('gulp'),
   stylus = require('gulp-stylus');
 
 var path = {
-  stylus: './*.styl',
+  stylus: 'stylus/*.styl',
   js: 'js/*.js',
   css: './',
   php: './*.php'
 }
 
 path.watch = {
-  stylus: './*.styl',
+  stylus: 'stylus/*.styl',
   js: 'js/*.js',
-  php: './*.php'
+  php: ['./*.php', '/templates/*.php']
 }
 
 var plumberErrorHandler = { errorHandler: notify.onError({
