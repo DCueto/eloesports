@@ -19,12 +19,7 @@ body
   background white !important
   text-align center
 
-.container
-  color white
-  padding-top 60px
-  background-color white
-
-header
+.main-header
   position fixed
   width 100%
   height 45px
@@ -32,43 +27,34 @@ header
   box-shadow 0px 0px 5px black
   background-color #0048b5
   
-  .header-left
-    width 50%
-    height 100%
-    position absolute
-    z-index -1
-    background-color #333333
   .wrap-header
     height 100%
     display flex
-    width 1300px
-    margin 0 auto
+  
+  .logo
+    canvas
+      display none
 
-
-.logo
-  background-color #333333
-  color white
-  width 200px
-  display flex
-  align-items center
-  &-title
-    margin 0
-    font-weight 400
-    font-size 24px
-    margin-right 20px
-  canvas
+  .nav
     display none
+    background-color #0048b5
+    color #0048b5
+    width 100%
+    align-items center
+    margin-left 50px
     
     
+  .logo-title
+    display none
 
 
-nav
-  background-color #0048b5
-  color #0048b5
-  width 100%
-  display flex
-  align-items center
-  margin-left 50px
+.container
+  color white
+  padding-top 45px
+  background-color white
+
+.featured-secondary
+  display none
   
   
 .menu
@@ -95,93 +81,132 @@ nav
       border-bottom 3px solid white
 
 .featured
-    background black
-    margin 0 auto 70px auto
+    width 100%
+    height 250px
+    overflow hidden
+    margin 0 auto 10px auto
     text-transform uppercase
+    &-main
+      height 100%
+      &-article
+        height 100%
+        position relative
+        &-image
+          height 100%
+          img
+            height auto
+            width 100%
+        &-bottom
+          position absolute
+          bottom 0
+          width 100%
+          //height 20%
+          background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 16%, rgba(0,0,0,1) 100%)
+          text-align left
+          font-size 20px
+          p
+            padding-top 20px
+            //position absolute
+            //bottom 0
+            margin 0 0 15px 10px
+          
+    figure
+      margin 0
     a
       color white
-
-.wrap
-  width 1300px
-  padding 0px 30px 0 30px
-  margin 0 auto
-  box-shadow 0px 0px 5px grey
-          
-.featured-articles 
-  display flex
-  flex-wrap wrap
-  justify-content space-between
-  .article
-    width 420px
-    text-align left
-    border 1px solid lightgrey
-    height 100%
-    flex-shrink 0
-    align-self auto
-    margin 10px 0px
-    border-radius 2px
-    max-height 461px
-    min-height 154px
-    overflow hidden
-    position relative
-    &-info
-      display flex
-      justify-content space-between
-    &-content
-      &-title
-        text-transform uppercase
-        color #333333
-        font-weight 500
-      &-container
-        &-description
-          color grey
-          height 100%;
-          
-    a
-      display block
-      width 100%
-      height 100%
-      text-decoration none
-    .blur-bottom
-      position absolute
-      bottom 0
-      width 100%
-      height 100px
-      background-image linear-gradient(to bottom, rgba(255,255,255,0) 20%, #FFF 100%)
-      
-
-.article-info
-  padding 7px 0
-  font-weight 600
-  color #4D4D4D
-  font-size 17px
-  &-cat
-    margin 0
-    margin-left 10px
-  &-date
-    margin 0
-    margin-right 10px
-.article-thumb
-  margin 0
-  width 100%
-  img
-    width 100%
-    height auto
-.article-content
-  margin 8px 10px
-  &-container
-    &-title
-      margin 0
-      font-weight 500
-      font-size 20px
   
 
 footer
   background-color gray
   width 100%
   height 300px
-  
+
+
+// Smartphones horizontal
+
+@media screen and (min-width: 640px)
+  .featured
+    width 95% !important
+    height auto !important
+    &-main
+      height auto
+    &-secondary
+      display none
+
+
+// Tablets
+
+@media screen and (min-width:800px)
+  .featured
+    width 591px
+    height 332px
+    
+    &-main
+      width 100%
+      height 100%
+
+
+// Tablets horizontal
+
+@media screen and (min-width: 950px)
+  .featured
+    width 769px
+    height 648px
+    flex-direction column
+    
+    &-main
+      width 100%
+      height 431px
+    
+    &-secondary
+      width 100%
+      height 215px
+      display flex
+      &-article
+        height 100%
+
+
+// Desktop pequeños
+
+@media screen and (min-width: 1079px)
+  .featured
+    width 889px
+    height 331px
+    
+    &-main
+      width 591px
+    
+    &-secondary
+      width 296px
+
+
+// Desktop
+
+@media screen and (min-width: 1080px) and (max-width: 1149px)
+  .featured
+    width 930px
+    height 347px
+    
+    &-main
+      width 619px
+      &-article-bottom
+        font-size 19px
+    
+    &-secondary
+      width 309px
+      &-article-bottom
+        font-size 15px
+      
+
+// Desktop medianos
+
 @media screen and (min-width: 1150px)
+
+  .nav
+    display flex
+  
+  .logo-title
+    display block
   .featured
     width 1102px
     height 410px
@@ -199,19 +224,6 @@ footer
           img
             width 100%
             height auto
-        &-bottom
-          position absolute
-          bottom 0
-          width 100%
-          //height 20%
-          background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 16%, rgba(0,0,0,1) 100%)
-          text-align left
-          font-size 20px
-          p
-            padding-top 20px
-            //position absolute
-            //bottom 0
-            margin 0 0 15px 10px
     
     &-secondary
       width 367px
@@ -246,140 +258,176 @@ footer
     &-secondary-article-image img
       display none
     */
+      
+
+
+// Desktop grandes
 
 @media screen and (min-width: 1440px)
-  .featured
-    background black
-    margin 0 auto 70px auto
-    padding 1px
-    display flex
-    width 1300px
-    height 487px
-    color white
     
-    &-main
-      width 866px
-      &-article
-        width 100%
-        height 100%
-        overflow hidden
-        position relative
-        &-image
-          margin 0 
-          img
-            width 100%
-            height auto !important
-            
-        &-bottom
-          position absolute
-          bottom 0
-          width 100%
-          //height 20%
-          background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 16%, rgba(0,0,0,1) 100%)
-          text-align left
-          font-weight 500 !important
-          font-size 24px
-          color white
-          p
-            padding-top 20px
-            text-transform uppercase
-            //position absolute
-            //bottom 0
-            margin 0 0 15px 18px
-            color white
-    
-    &-secondary
-      width 434px
-      &-article
-        height 50%
-        overflow hidden
-        position relative
-        &-image
-          margin 0
-          height 100%
-          img
-            width 100%
-            height auto !important
-        &-bottom
-          position absolute
-          bottom 0
-          width 100%
-          //height 30%
-          background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 16%, rgba(0,0,0,1) 100%)
-          text-align left
-          font-weight 400
-          font-size 16px
-          p
-            padding-top 20px
-            text-transform uppercase
-            //position absolute
-            //bottom 0
-            margin 0 0 10px 10px
-
-@media screen and (min-width: 1080px) and (max-width: 1149px)
-  .featured
-    width 930px
-    height 347px
-    
-    &-main
-      width 619px
-      &-article-bottom
-        font-size 19px
-    
-    &-secondary
-      width 309px
-      &-article-bottom
-        font-size 15px
-
-
-@media screen and (max-width: 1079px)
-  .featured
-    width 889px
-    height 331px
-    
-    &-main
-      width 591px
-    
-    &-secondary
-      width 296px
-      
-
-@media screen and (max-width: 950px)
-  .featured
-    width 769px
-    height 648px
-    flex-direction column
-    
-    &-main
-      width 100%
-      height 431px
-    
-    &-secondary
-      width 100%
-      height 215px
-      display flex
-      &-article
-        height 100%
-        
-@media screen and (max-width:800px)
-  .featured
-    width 591px
-    height 332px
-    
-    &-main
-      width 100%
+    .header-left
+      width 50%
       height 100%
+      position absolute
+      z-index -1
+      background-color #333333
+    .wrap-header
+      width 1300px
+      margin 0 auto
       
+    .logo
+      background-color #333333
+      color white
+      width 200px
+      display flex
+      align-items center
+      &-title
+        margin 0
+        font-weight 400
+        font-size 24px
+        margin-right 20px
+      canvas
+        display none
+    .wrap
+      width 1300px
+      padding 0px 30px 0 30px
+      margin 0 auto
+      box-shadow 0px 0px 5px grey
     
+    .featured
+      background black
+      margin 0 auto 70px auto
+      padding 1px
+      display flex
+      width 1300px
+      height 487px
+      color white
     
+      &-main
+        width 866px
+        &-article
+          width 100%
+          height 100%
+          overflow hidden
+          position relative
+          &-image
+            margin 0 
+            img
+              width 100%
+              height auto !important
+            
+          &-bottom
+            position absolute
+            bottom 0
+            width 100%
+            //height 20%
+            background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 16%, rgba(0,0,0,1) 100%)
+            text-align left
+            font-weight 500 !important
+            font-size 24px
+            color white
+            p
+              padding-top 20px
+              text-transform uppercase
+              //position absolute
+              //bottom 0
+              margin 0 0 15px 18px
+              color white
+    
+      &-secondary
+        width 434px
+        &-article
+          height 50%
+          overflow hidden
+          position relative
+          &-image
+            margin 0
+            height 100%
+            img
+              width 100%
+              height auto !important
+          &-bottom
+            position absolute
+            bottom 0
+            width 100%
+            //height 30%
+            background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 16%, rgba(0,0,0,1) 100%)
+            text-align left
+            font-weight 400
+            font-size 16px
+            p
+              padding-top 20px
+              text-transform uppercase
+              //position absolute
+              //bottom 0
+              margin 0 0 10px 10px
+            
+    .featured-articles 
+      display flex
+      flex-wrap wrap
+      justify-content space-between
+      .article
+        width 420px
+        text-align left
+        border 1px solid lightgrey
+        height 100%
+        flex-shrink 0
+        align-self auto
+        margin 10px 0px
+        border-radius 2px
+        max-height 461px
+        min-height 154px
+        overflow hidden
+        position relative
+        &-info
+          display flex
+          justify-content space-between
+        &-content
+          &-title
+            text-transform uppercase
+            color #333333
+            font-weight 500
+          &-container
+            &-description
+              color grey
+              height 100%;
+            
+        a
+          display block
+          width 100%
+          height 100%
+          text-decoration none
+        .blur-bottom
+          position absolute
+          bottom 0
+          width 100%
+          height 100px
+          background-image linear-gradient(to bottom, rgba(255,255,255,0) 20%, #FFF 100%)
+        
 
-@media screen and (max-width: 640px)
-  .featured
-    width 95%
-    height auto
-    &-main
-      height auto
-    &-secondary
-      display none
+    .article-info
+      padding 7px 0
+      font-weight 600
+      color #4D4D4D
+      font-size 17px
+      &-cat
+        margin 0
+        margin-left 10px
+      &-date
+        margin 0
+        margin-right 10px
+    .article-thumb
+      margin 0
+      width 100%
+      img
+        width 100%
+        height auto
+    .article-content
+      margin 8px 10px
+      &-container
+        &-title
+          margin 0
+          font-weight 500
+          font-size 20px
 
       
