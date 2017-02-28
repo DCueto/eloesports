@@ -7,6 +7,8 @@ Description: Tema personalizado exclusivamente para la página de eloesports.com
 Version: 1.0
 */
 
+@import "fonts.styl"
+
 html
   margin 0
   padding 0
@@ -25,8 +27,21 @@ body
   height 45px
   z-index 10
   box-shadow 0px 0px 5px black
-  background-color #0048b5
-  
+  background-color #144794
+  .header-left
+    width 60px
+    height 100%
+    position absolute
+    z-index -1
+    background-color #333333
+    display flex
+    align-items center
+    justify-content center
+    
+    .menu-icon
+      font-size 30px
+      color white
+      width 50%
   .wrap-header
     height 100%
     display flex
@@ -52,10 +67,6 @@ body
   color white
   padding-top 45px
   background-color white
-
-.featured-secondary
-  display none
-  
   
 .menu
   display flex
@@ -88,6 +99,7 @@ body
     text-transform uppercase
     &-main
       height 100%
+      width 100%
       &-article
         height 100%
         position relative
@@ -103,12 +115,32 @@ body
           //height 20%
           background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 16%, rgba(0,0,0,1) 100%)
           text-align left
-          font-size 20px
+          font-size 26px
+          font-family 'Antonio'
+          font-weight normal
           p
             padding-top 20px
             //position absolute
             //bottom 0
             margin 0 0 15px 10px
+    &-secondary
+      display none
+      height 217px
+      a
+        width 100%
+      &-article
+        width 100%
+        height 100%
+        overflow hidden
+        position relative
+        &-image
+          height auto
+          img
+            width 100%
+            height auto
+        &-bottom
+          position absolute
+          bottom 0
           
     figure
       margin 0
@@ -126,42 +158,70 @@ footer
 
 @media screen and (min-width: 640px)
   .featured
-    width 95% !important
-    height auto !important
-    &-main
-      height auto
-    &-secondary
-      display none
+    height 350px
 
 
 // Tablets
 
 @media screen and (min-width:800px)
   .featured
-    width 591px
-    height 332px
+    height auto
+    flex-direction column
     
     &-main
-      width 100%
-      height 100%
+      height 300px
+      overflow hidden
+    &-secondary
+      display flex
+      height 217px
+      a
+        width 50%
+      &-article
+        width 100%
+        height 100%
+        overflow hidden
+        &-image
+          height auto
+          img
+            width 100%
+            height auto
+        &-bottom
+          width 100%
+          //height 30%
+          background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 16%, rgba(0,0,0,1) 100%)
+          text-align left
+          font-family 'Antonio'
+          font-size 22px
+          p
+            padding-top 20px
+            //position absolute
+            //bottom 0
+            margin 0 0 10px 10px
+      
 
 
 // Tablets horizontal
 
 @media screen and (min-width: 950px)
   .featured
-    width 769px
-    height 648px
-    flex-direction column
+    margin-top 20px
+    width 95%
+    height 332px
+    display flex
+    flex-direction row !important
     
     &-main
       width 100%
-      height 431px
+      height 100%
     
     &-secondary
-      width 100%
-      height 215px
+      width 60%
+      height 100%
       display flex
+      flex-direction column
+      a
+        width 100%
+        height 50%
       &-article
         height 100%
 
@@ -190,12 +250,12 @@ footer
     &-main
       width 619px
       &-article-bottom
-        font-size 19px
+        font-size 28px
     
     &-secondary
       width 309px
       &-article-bottom
-        font-size 15px
+        font-size 19px
       
 
 // Desktop medianos
@@ -223,12 +283,11 @@ footer
           margin 0 
           img
             width 100%
-            height auto
-    
+            height auto   
     &-secondary
       width 367px
       &-article
-        height 50%
+        height 100%
         overflow hidden
         position relative
         &-image

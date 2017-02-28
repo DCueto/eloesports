@@ -13,7 +13,7 @@
 <body>
 <header class="main-header">
 	<div class="header-left">
-		
+		<span class="menu-icon icon-menu"></span>
 	</div>
 	<div class="wrap-header">
 		<div class="logo">
