@@ -44,6 +44,8 @@ body
       width 50%
   .wrap-header
     height 100%
+    width 85%
+    margin 0 auto
     display flex
   
   .logo
@@ -52,7 +54,7 @@ body
 
   .nav
     display none
-    background-color #0048b5
+    background-color #144794
     color #0048b5
     width 100%
     align-items center
@@ -147,6 +149,74 @@ body
     a
       color white
   
+.featured-articles
+  width 95%
+  margin 0 auto
+  .article
+    margin-bottom 15px
+    min-height 200px
+    max-height 450px
+    overflow hidden
+    a
+      text-decoration none
+    &-info
+      display flex
+      justify-content space-between
+      padding 7px 0
+      font-weight 600
+      color #4D4D4D
+      font-size 17px
+      &-cat
+        margin 0
+        margin-left 10px
+      &-date
+        margin 0
+        margin-right 10px
+      p
+        margin 0
+    &-thumb
+      height 200px
+      overflow hidden
+    &-content
+      text-align left
+      &-title
+        text-transform uppercase
+        color #333333
+        font-weight bold
+        font-size 23px
+        font-family 'Antonio'
+        margin-top 0
+      &-container
+        &-description
+          color grey
+          height 100%;
+      
+      
+    .article-info
+      padding 7px 0
+      font-weight 600
+      color #4D4D4D
+      font-size 17px
+      &-cat
+        margin 0
+        margin-left 10px
+      &-date
+        margin 0
+        margin-right 10px
+    .article-thumb
+      margin 0
+      width 100%
+      img
+        width 100%
+        height auto
+    .article-content
+      margin 8px 10px
+      &-container
+        &-title
+          margin 0
+          font-weight 500
+          font-size 20px
+
 
 footer
   background-color gray
@@ -159,7 +229,18 @@ footer
 @media screen and (min-width: 640px)
   .featured
     height 350px
+    
 
+//Articles
+
+@media screen and (min-width: 730px)
+
+  .featured-articles
+    display flex
+    flex-wrap wrap
+    justify-content center
+    .article
+      width 100%
 
 // Tablets
 
@@ -243,6 +324,17 @@ footer
 // Desktop
 
 @media screen and (min-width: 1080px) and (max-width: 1149px)
+
+  
+  .header-left
+    width 50% !important
+  
+  .menu-icon
+    display none
+    
+  .nav
+    display flex !important
+
   .featured
     width 930px
     height 347px
@@ -262,63 +354,24 @@ footer
 
 @media screen and (min-width: 1150px)
 
+  .header-left
+    width 50% !important
+  
+  .menu-icon
+    display none
+    
   .nav
-    display flex
+    display flex !important
   
   .logo-title
     display block
   .featured
     width 1102px
     height 410px
-    display flex
-    
     &-main
-      width 734px
-      &-article
-        width 100%
-        height 100%
-        overflow hidden
-        position relative
-        &-image
-          margin 0 
-          img
-            width 100%
-            height auto   
+      width 734px      
     &-secondary
       width 367px
-      &-article
-        height 100%
-        overflow hidden
-        position relative
-        &-image
-          margin 0
-          height 100%
-          img
-            width 100%
-            height auto !important
-        &-bottom
-          position absolute
-          bottom 0
-          width 100%
-          //height 30%
-          background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 16%, rgba(0,0,0,1) 100%)
-          text-align left
-          font-weight 400
-          p
-            padding-top 20px
-            //position absolute
-            //bottom 0
-            margin 0 0 10px 10px
-            
-        
-    /*
-    &-main-article-image img
-      display none
-    &-secondary-article-image img
-      display none
-    */
-      
-
 
 // Desktop grandes
 
@@ -330,6 +383,10 @@ footer
       position absolute
       z-index -1
       background-color #333333
+    
+    .menu-icon
+      display none
+      
     .wrap-header
       width 1300px
       margin 0 auto
@@ -341,12 +398,16 @@ footer
       display flex
       align-items center
       &-title
+        display block !important
         margin 0
         font-weight 400
         font-size 24px
         margin-right 20px
       canvas
         display none
+    
+    .nav
+      display flex !important
     .wrap
       width 1300px
       padding 0px 30px 0 30px
@@ -355,7 +416,7 @@ footer
     
     .featured
       background black
-      margin 0 auto 70px auto
+      margin 15px auto 70px auto
       padding 1px
       display flex
       width 1300px
@@ -383,7 +444,7 @@ footer
             background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 16%, rgba(0,0,0,1) 100%)
             text-align left
             font-weight 500 !important
-            font-size 24px
+            font-size 26px
             color white
             p
               padding-top 20px
@@ -396,7 +457,7 @@ footer
       &-secondary
         width 434px
         &-article
-          height 50%
+          height 100%
           overflow hidden
           position relative
           &-image
@@ -413,7 +474,7 @@ footer
             background linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.46) 16%, rgba(0,0,0,1) 100%)
             text-align left
             font-weight 400
-            font-size 16px
+            font-size 20px
             p
               padding-top 20px
               text-transform uppercase

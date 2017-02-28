@@ -21,5 +21,10 @@ $(window).scroll(function() {
 });
 
 
+// CHECK FOR THUMBNAIL
+
+
+//$('.article-tumb').css({width: '49%'});
+
 
 })
