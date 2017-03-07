@@ -1,12 +1,16 @@
 <section class="featured">
 	<div class="featured-main">
-		<?php 
+		<?php
 			$latests_posts = get_posts( array(
 				'numberposts' => 1,
 				'order' => 'Asc',
-				'category' => 2,
+				'category' => 3,
 				)
 			);
+
+			$id1 = $latests_posts[0]->ID;
+
+			//var_dump($id1);
 
 			if ($latests_posts) {
 				foreach ($latests_posts as $post):
@@ -33,7 +37,7 @@
 				'numberposts' => 2,
 				'order' => 'Asc',
 				'offset' => 1,
-				'category' => 2,
+				'category' => 3,
 				)
 			);
 
