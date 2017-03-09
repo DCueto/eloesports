@@ -2,9 +2,10 @@
 
 <main class="container">
 	<div class="click-block"></div>
+	<div class="banner"></div>
 	<?php rewind_posts(); ?>
-
-	<?php include TEMPLATEPATH . '/templates/relevant.php' ?>
+	
+	<?php include TEMPLATEPATH . '/templates/relevant/relevant-lol.php' ?>
 	<div class="wrap">
 		<section class="featured-articles">
 			<h2 class="featured-articles-title section-title">FEATURED</h2>
@@ -27,6 +28,7 @@
 					$popular_posts = array(
 						//'header' => 'Articulos Populares',
 						'limit' => 6,
+						'cat' => 5,
 						'range' => 'weekly',
 						//'freshness' => 1,
 						'order_by' => 'avg',
@@ -68,6 +70,7 @@
 					$last_posts = get_posts(array(
 						'order' => 'desc',
 						'numberposts' => 10,
+						'category' => 5,
 					));
 			 	?>
 				<?php if($last_posts){ foreach ($last_posts as $post) : setup_postdata( $post ); ?>

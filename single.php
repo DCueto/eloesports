@@ -2,6 +2,7 @@
 
 
 <main class="container">
+	<div class="click-block"></div>
 	<div class="wrap">
 		<section class="main__single">
 			<div class="single">
@@ -46,9 +47,10 @@
 				<article class="single-article">
 					<h2 class="single-article-title"><?php the_title(); ?></h2>
 					<div class="single-article-info">
-						<p class="single-article-info-author"><?php the_author(); ?></p>
+						<p class="by">Por</p>
+						<a href=""><p class="single-article-info-author"><?php the_author(); ?></p></a>
 						<p class="single-article-info-date"><?php the_date(); ?></p>
-						<p><?php echo $category_name; ?></p>
+						<p><?php //echo $category_name; ?></p>
 					</div>
 					<div class="single-article-description">
 						<p><?php echo rwmb_meta('rw_frased'); ?></p>

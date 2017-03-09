@@ -36,18 +36,112 @@ body
     background-color #333333
     display flex
     align-items center
+    cursor pointer
     justify-content center
     
     .menu-icon
       font-size 30px
       color white
       width 50%
+  
+  .nav-mobile
+    position absolute
+    top 50px
+    width 90%
+    height 100vh
+    background-color #1b1c25
+    left -100%
+    //display none
+    &-title
+      text-align left
+      color white
+      margin-left 15px
+      width 90%
+      border-bottom 1px solid darkgrey
+      padding-bottom 7px
+    .nav, .nav-mobile-container
+      position relative
+      width 100%
+      ul
+        display flex
+        flex-direction column
+        align-items flex-start
+        justify-content center
+        padding 0
+        margin-left 20px
+        li
+          width 90%
+          list-style none
+          color white
+          height auto
+          text-align left
+          margin 5px
+          margin-bottom 10px
+          font-size 17px
+          a
+            text-decoration none
+            color white
+            &:hover
+              color cornflowerblue
+      
+      
+    
   .wrap-header
     height 100%
     width 85%
     margin 0 auto
     display flex
     justify-content space-between
+    display none
+    
+    .nav
+      display none
+      background-color #144794
+      color #0048b5
+      width 100%
+      align-items center
+      //margin-left 40px
+      .menu
+        display flex
+        list-style none
+        align-items center
+        margin-left 5px
+        padding 0
+        ul
+          margin 0
+          display flex
+          
+        li
+          margin 0 20px
+          font-size 18px
+          font-weight 500
+          list-style none
+          a
+            text-decoration none
+            color white
+            padding-bottom 8px
+            //text-transform uppercase
+          :hover
+            color white
+            border-bottom 3px solid white
+    
+    .social
+      width 200px
+      height 100%
+      display flex
+      justify-content flex-end
+      align-items center
+      position absolute
+      right 0
+      a
+        margin 0 4px
+      &-icon
+        font-size 18px
+        color white
+        width 20%
+        padding 7px
+        //border 1px solid white
+        //border-radius 50%
   
   .logo
     display none
@@ -80,61 +174,27 @@ body
       letter-spacing 2px
     canvas
       display none
-
-  .nav
-    display none
-    background-color #144794
-    color #0048b5
-    width 100%
-    align-items center
-    //margin-left 40px
   
-  .social
-    width 200px
-    height 100%
-    display flex
-    justify-content flex-end
-    align-items center
-    position absolute
-    right 0
-    a
-      margin 0 4px
-    &-icon
-      font-size 18px
-      color white
-      width 20%
-      padding 7px
-      //border 1px solid white
-      //border-radius 50%
 
 .container
   color white
   padding-top 45px
   background-color white
-  
-.menu
-  display flex
-  list-style none
-  align-items center
-  margin-left 5px
-  padding 0
-  ul
-    margin 0
-    display flex
-    
-  li
-    margin 0 20px
-    font-size 18px
-    font-weight 500
-    list-style none
-    a
-      text-decoration none
-      color white
-      padding-bottom 8px
-      //text-transform uppercase
-    :hover
-      color white
-      border-bottom 3px solid white
+  /*.banner
+    width 100%
+    height 350px
+    background-image url('img/bg-halcyon.jpg');
+    position absolute
+    z-index 0*/
+  .click-block
+    width 100%
+    height 100vh
+    background black
+    opacity 0.6
+    z-index 1
+    position absolute
+    left -100%
+    display none
 
 .featured
     width 100%
@@ -142,6 +202,7 @@ body
     overflow hidden
     margin 0 auto 10px auto
     text-transform uppercase
+    background black
     &-main
       height 100%
       width 100%
@@ -245,6 +306,7 @@ body
       font-weight 600
       color #4D4D4D
       font-size 17px
+      margin 0 10px
       &-cat
         margin 0
         margin-left 10px
@@ -434,7 +496,12 @@ footer
 
   .wrap-header
     width 930px !important
-
+    display flex !important
+    .nav
+      display flex !important
+    .social
+      position static !important
+          
   .header-left
     width 50% !important
   
@@ -445,12 +512,7 @@ footer
     
   .menu-icon
     display none
-    
-  .nav
-    display flex !important
   
-  .social
-    position static !important
 
   .featured
     width 930px
@@ -485,12 +547,11 @@ footer
   
   .wrap-header
     width 1102px !important
-  
+    display flex !important
+    .nav
+      display flex !important
   .menu-icon
     display none
-    
-  .nav
-    display flex !important
   
   .social
     position static !important
@@ -534,9 +595,9 @@ footer
     .wrap-header
       width 1300px !important
       margin 0 auto
-    
-    .nav
-      display flex !important
+      .nav
+        display flex !important
+        
     .wrap
       width 1300px
       padding 0px 30px 0 30px
@@ -544,7 +605,6 @@ footer
       //box-shadow 0px 0px 5px grey
     
     .featured
-      background black
       //margin 15px auto 70px auto
       padding 1px
       display flex
@@ -652,3 +712,22 @@ footer
 
 
 @import 'single.styl'
+
+.alignright, .alignright {
+        float: right;
+        margin-left: 1em;
+        margin-bottom: 1em;
+}
+
+.alignleft, a .alignleft {
+        float: left;
+        margin-right: 1em;
+        margin-bottom: 1em;
+}
+
+.aligncenter, a .aligncenter {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 1em;
+}

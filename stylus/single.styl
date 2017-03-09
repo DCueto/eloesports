@@ -47,6 +47,11 @@
 .single
 	text-align left
 	width 100%
+	font-size 17px
+	line-height 24px
+	a
+		text-decoration none
+		color cornflowerblue
 	&-article
 		&-title
 			font-family 'Roboto Condensed'
@@ -56,6 +61,22 @@
 			line-height 1.05
 		&-info
 			display flex
+			font-size 16px
+			.by
+				margin-right 4px
+				color gray
+			&-author
+				font-weight 500
 			&-date
 				margin-left 10px
-		
+				color #a2a2a2
+				
+				
+
+@media screen and (max-width: 1080px)
+	.main__single
+		margin-left 20px
+		margin-right 20px
+	
+	.last_posts
+		display none

@@ -117,7 +117,6 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
  * @return  string
  */
 function my_custom_popular_posts_html_list( $mostpopular, $instance ){
-    $output = '<div class="articles-container">';
 
     // loop the array of popular posts objects
     foreach( $mostpopular as $popular ) {
@@ -206,11 +205,17 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
 
         $permalink_article = "<article class='article'> <a href='". get_the_permalink($popular->id) . "'>";
 
-        $article_info = "<div class='article-info'> <p class='last_posts-post-info-date'>" . get_the_date($popular->id) . "</p>" . "<p class='last_posts-post-info-cat'>" . $category_name . "</p> </div>";
+        $article_info = "<div class='article-info'> <p class='last_posts-post-info-date'>" . $date . "</p>" . "<p class='last_posts-post-info-cat'>" . $category_name . "</p> </div>";
 
         $article_content = "<div class='article-content'> <h3 class='article-content-title'>" . $popular->title . "</h3> <div class='article-content-container'> <p class='article-content-container-description'>" . rwmb_meta('rw_frased') . "</p> </div> </div>";
 
-        $article_author = "<div class='article-author'> <span>by</span><p>" . $popular->author . "</p> </div>";
+        $author_query = get_user_by('ID', $popular->uid);
+
+        $author_name = $author_query->display_name
+;
+        $article_author = "<div class='article-author'> <span>by</span><p>" . $author_name . "</p> </div>";
+
+        //$test = var_dump($popular);
 
         if( has_post_thumbnail($popular->id)){
             $thumbnail_img = get_the_post_thumbnail($popular->id, 'my-size');
@@ -223,6 +228,7 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
         $output .= $thumbnail_string;
         $output .= $article_content;
         $output .= $article_author;
+        //$output .= $test;
 
         //$output .= "<h2 class=\"entry-title\"><a href=\"" . get_the_permalink( $popular->id ) . "\" title=\"" . esc_attr( $popular->title ) . "\">" . $popular->title . "</a></h2>";
         //$output .= $stats;
@@ -231,10 +237,9 @@ function my_custom_popular_posts_html_list( $mostpopular, $instance ){
 
     }
 
-    $output .= '</div>';
-
     return $output;
 }
+
 
 add_filter( 'wpp_custom_html', 'my_custom_popular_posts_html_list', 10, 2 );
 
@@ -243,7 +248,9 @@ add_filter( 'wpp_custom_html', 'my_custom_popular_posts_html_list', 10, 2 );
 
 // ESTO TE IMPRIME SOLO LOS ARTICULOS EN CONCRETO
 
-function my_custom_single_popular_post( $post_html, $p, $instance ){    
+function my_custom_single_popular_post( $post_html, $p, $instance ){
+
+    var_dump($p);    
     // AQUÍ SE FILTRAN LAS CATEGORIAS DE LOS POSTS PARA SACAR 1 SOLA CATEGORIA - Añadir más categorias cuando se introduzcan más juegos
 
         $category = get_the_category($p->id);
@@ -278,7 +285,33 @@ function my_custom_single_popular_post( $post_html, $p, $instance ){
     //$output .= $stats;
     //$output .= $excerpt;
     $output .= "</a></article>" . "\n"; 
-    return htmlentities($output);
+    return $output;
 }
 add_filter( 'wpp_post', 'my_custom_single_popular_post', 10, 3 );
+
+
+
+
+
+// AJAX FOR LOAD MORE POSTS
+/*
+$ajaxurl = '';
+
+if(in_array('sitepress-multilingual-cms/sitepress.php', get_option('active_plugins')) ){
+    $ajaxurl .= admin_url('admin-ajaxx.php?lang=' . ICL_LANGUAGE_CODE);
+} else{
+    $ajaxurl .= admin_url('admin-ajax.php');
+}
+
+wp_localize_script('eloesports-script', 'screenReaderText', array(
+    'expand' => __('expand child menu', 'eloesports'),
+    'collapse' => __('collapse child menu', 'eloesports'),
+    'ajaxurl' => $ajaxurl,
+    'noposts' =>
+    ) );
+
+
+*/
+
+
 ?>
