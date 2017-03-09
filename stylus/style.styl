@@ -51,6 +51,7 @@ body
     height 100vh
     background-color #1b1c25
     left -100%
+    overflow-y auto
     //display none
     &-title
       text-align left
@@ -119,7 +120,7 @@ body
           a
             text-decoration none
             color white
-            padding-bottom 8px
+            padding-bottom 10px
             //text-transform uppercase
           :hover
             color white
@@ -135,6 +136,8 @@ body
       right 0
       a
         margin 0 4px
+        :hover
+          color lightgrey
       &-icon
         font-size 18px
         color white
@@ -180,6 +183,7 @@ body
   color white
   padding-top 45px
   background-color white
+  margin-bottom 30px
   /*.banner
     width 100%
     height 350px
@@ -192,7 +196,7 @@ body
     background black
     opacity 0.6
     z-index 1
-    position absolute
+    position fixed
     left -100%
     display none
 
@@ -324,12 +328,12 @@ body
       &-title
         //text-transform uppercase
         color #333333
-        font-size 26px
+        font-size 27px
         line-height 1.2
         //font-family 'Antonio'
         //font-weight bold
         
-        font-family 'Dosis', 'PT Sans Narrow'
+        font-family 'Roboto Condensed'
         font-weight 500
         margin-top 0
       &-container
@@ -395,10 +399,47 @@ body
         iframe
           width 100%
           height 100%
+          
 footer
-  background-color gray
+  //position absolute
+  //bottom 100px
+  background-color #1b1c25
   width 100%
-  height 300px
+  height auto
+  color white
+  .copyright
+    display flex
+    justify-content center
+    height 50px
+    align-items center
+    opacity 0.7
+    p
+      margin 0
+      margin-right 20px
+    .logo_footer
+      width 200px
+      height 30px
+      a
+        display flex
+        width 100%
+        height 30px
+        text-decoration none
+        color white
+        font-family 'Brandon Grotesque'
+        font-weight 600
+        font-size 22px
+        letter-spacing 3px
+        p
+          margin 0
+        figure 
+          width 30px
+          height auto
+          margin 0
+          margin-right 2px
+          img
+            width 30px
+            height auto
+    
 
 
 // Smartphones horizontal

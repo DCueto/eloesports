@@ -59,6 +59,14 @@
 						<?php the_content(); ?>
 					</div>
 				</article>
+				<div class="comments">
+					<?php 
+						// If comments are open or we have at least one comment, load up the comment template.
+						 if ( comments_open() || get_comments_number() ) :
+						     comments_template();
+						 endif;
+					 ?>
+				</div>
 			</div>
 			<section class="last_posts">
 				<div class="last_posts-container">
@@ -92,8 +100,30 @@
 			</section>
 		</section>
 	</div>
-
 </main>
+<footer class="footer-single">
+	<div class="copyright">
+	<p>Copyright © 2017 Eloesports. Todos los derechos reservados</p>
+	<div class="logo_footer">
+		<a href="http://localhost/eloesports">
+		<figure>
+			<?php if(function_exists('the_custom_logo')){
+				$custom_logo_id = get_theme_mod('custom_logo');
+				$logo = wp_get_attachment_image_src($custom_logo_id, 'full');
+				if (has_custom_logo()) {
+					echo '<img src="'.esc_url($logo[0]).'">';
+				} else {
+					echo 'NO LOGO';
+				}
+				} 
+			?>
+			<!-- <img src="" alt=""> -->
+		</figure>
+		<p class="logo_footer-title">LOESPORTS</p>
+		</a>
+	</div>
+	</div>
+</footer>
 
 
 <?php wp_footer(); ?>

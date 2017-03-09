@@ -53,7 +53,7 @@
 			<div class="videos-container">
 				<?php 
 					$last_videos = get_posts(array(
-						'category' => 11,
+						'category' => 13,
 						'order' => 'desc',
 						'numberposts' => 3,
 					));

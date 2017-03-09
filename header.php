@@ -20,6 +20,13 @@
 	</div>
 	<div class="nav-mobile nav-mobile-off">
 		<div class="nav-mobile-container">
+			<div class="nav-mobile-container-social">
+				<ul>
+					<li><a href="http://localhost/eloesports">Home</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="nav-mobile-container">
 			<h3 class="nav-mobile-title">Juegos</h3>
 			<?php include TEMPLATEPATH . '/templates/nav.php' ?>
 		</div>
