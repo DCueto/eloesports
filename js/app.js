@@ -79,12 +79,25 @@ if ($('.article figure').hasClass('article-thumb')){
 // MEDIA QUERIES
 
 // No event resize
+	
+	// Media query - Tablet screen
+
+	if ($('body').width() < 1080 ){
+		$(".header_author-info-bio").detach().appendTo('.header_author');
+		$('.header_author-info-bio h4').css({background: '#1B1C25', color: 'white', padding: '3px'});
+	}
+
+	if ($('body').width() >= 1080 ){
+		$(".header_author-info-bio").detach().appendTo('.header_author-info');
+		$('.header_author-info-bio h4').css({background: 'white', color: 'black', padding: '0'});
+	}
 
 	// Media query - Smartphone screen
 
 if ($('body').width() < 730 ){
 	if ($('.article figure').hasClass('article-thumb')){
 		$('.article').has('.article-thumb').css({width: '100%', 'min-height': '300px'});
+
 	}
 }
 	// Media query - Tablet screen
@@ -104,6 +117,19 @@ if ($('body').width() >= 1150) {
 // With resize event
 
 $(window).resize(function(){
+
+
+	// Media query - Tablet screen
+
+	if ($('body').width() < 1080 ){
+		$(".header_author-info-bio").detach().appendTo('.header_author');
+		$('.header_author-info-bio h4').css({background: '#1B1C25', color: 'white', padding: '3px'});
+	}
+
+	if ($('body').width() >= 1080 ){
+		$(".header_author-info-bio").detach().appendTo('.header_author-info');
+		$('.header_author-info-bio h4').css({background: 'white', color: 'black', padding: '0'});
+	}
 
 	// Media query - Smartphone screen
 

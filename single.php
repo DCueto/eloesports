@@ -48,7 +48,7 @@
 					<h2 class="single-article-title"><?php the_title(); ?></h2>
 					<div class="single-article-info">
 						<p class="by">Por</p>
-						<a href=""><p class="single-article-info-author"><?php the_author(); ?></p></a>
+						<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" ><p class="single-article-info-author"><?php the_author(); ?></p></a>
 						<p class="single-article-info-date"><?php the_date(); ?></p>
 						<p><?php //echo $category_name; ?></p>
 					</div>
