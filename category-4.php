@@ -8,44 +8,9 @@
 	<?php include TEMPLATEPATH . '/templates/relevant/relevant-vg.php' ?>
 	<div class="wrap">
 		<section class="featured-articles">
-			<h2 class="featured-articles-title section-title">FEATURED</h2>
+			<h2 class="featured-articles-title section-title">Relevantes</h2>
 			<div class="article-wrapper">
-				<!--
-				<?php /*
-				$featured_posts = get_posts(array(
-					'meta_key' => 'post_views_count',
-					'order' => 'desc',
-					'numberposts' => 6,
-					'category' => '-8, -9, -3, -7'
-				)); *
-				?>
-				<?php if($featured_posts){ foreach ($featured_posts as $post) : setup_postdata( $post ); ?>
-				<?php include TEMPLATEPATH . '/templates/theloop.php'?>
-				<?php endforeach; wp_reset_postdata(); } */?> 
-				-->
-
-				<?php 
-					$popular_posts = array(
-						//'header' => 'Articulos Populares',
-						'limit' => 6,
-						'cat' => 4,
-						'range' => 'weekly',
-						//'freshness' => 1,
-						'order_by' => 'avg',
-						'stats_date' => 1,
-						'stats_date_format' => 'F j, Y',
-					);
-					
-					/*if (function_exists('wpp_custom_html')){
-						wpp_custom_html($popular_posts);
-					}*/
-
-					if (function_exists('wpp_get_mostpopular')){
-						//$print_posts = wpp_post($popular_posts);
-						wpp_get_mostpopular($popular_posts);
-					}
-				?>
-				
+				<?php include TEMPLATEPATH . '/templates/popular_posts.php'?>
 			</div>
 		</section>
 		<section class="videos">
